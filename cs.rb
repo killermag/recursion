@@ -10,6 +10,12 @@ def fibs(n)
   end 
 end 
 
+def fibs_rec(n,array = [0,1])
+  return if n == 2
+  fib(n-1,array)
+  array << array[-1] + array[-2]
+end 
+
 def merge_sort (array) 
   return array if array.length < 2 
   a = merge_sort(array.slice!(0..array.length/2-1))
